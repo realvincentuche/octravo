@@ -2,7 +2,7 @@ import { Link, useLocation } from '@tanstack/react-router'
 import { useState } from 'react'
 
 import { company, nav, serviceClusters } from '../site'
-import { Icon } from './icons'
+import { Icon, type IconName } from './icons'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
@@ -125,6 +125,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
               </ul>
             </nav>
+            <nav aria-label="Services">
+              <p className="footer-title">Services</p>
+              <ul className="footer-nav">
+                {serviceClusters.map((cluster) => (
+                  <li key={cluster.title}>
+                    <Link to="/services">
+                      <Icon name={cluster.icon as IconName} size={17} />
+                      <span>{cluster.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
             <div>
               <p className="footer-title">Reach us</p>
               <ul className="footer-nav">
@@ -158,6 +171,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <span>Oregun, Lagos, Nigeria</span>
                   </span>
                 </li>
+              </ul>
+              <p className="footer-title" style={{ marginTop: '1.4rem' }}>
+                Products
+              </p>
+              <ul className="footer-nav">
                 <li>
                   <a
                     href="https://cvtoedge.com"
@@ -178,16 +196,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <span>Octravo Assistant</span>
                   </a>
                 </li>
-              </ul>
-              <p className="footer-title" style={{ marginTop: '1.4rem' }}>
-                Services
-              </p>
-              <ul className="footer-nav">
-                {serviceClusters.map((cluster) => (
-                  <li key={cluster.title}>
-                    <Link to="/services">{cluster.title}</Link>
-                  </li>
-                ))}
               </ul>
             </div>
           </div>

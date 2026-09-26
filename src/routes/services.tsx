@@ -4,7 +4,7 @@ import { Reveal } from '../components/Reveal'
 import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
 import { Icon, type IconName } from '../components/icons'
-import { serviceClusters } from '../site'
+import { company, serviceClusters } from '../site'
 
 export const Route = createFileRoute('/services')({ component: Services })
 
@@ -15,7 +15,7 @@ function Services() {
     <Reveal>
       <Banner
         title="Services that match your problem"
-        lede="Start from the pain you feel. Each group below lists what we deliver and ends with a conversation, not a quote form."
+        lede="Start from the pain you feel. Each section below is a full group with its own photo, deliverables and next step."
         image={banners.services}
         cta
       />
@@ -30,24 +30,36 @@ function Services() {
               </>
             }
           />
-          <div className="grid-2">
-            {serviceClusters.map((cluster) => (
-              <article className={`card ${cluster.tone}`} key={cluster.title}>
-                <div className="card-icons">
-                  <span className="card-badge">
-                    <Icon name={cluster.icon as IconName} size={24} />
-                  </span>
-                  <span className="card-ghost" aria-hidden="true">
-                    <Icon name={cluster.icon as IconName} size={120} />
-                  </span>
+          <div className="feature-list">
+            {serviceClusters.map((cluster, i) => (
+              <article
+                className={`feature-row${i % 2 === 1 ? ' flip' : ''}`}
+                key={cluster.title}
+              >
+                <div className="feature-media">
+                  <img src={cluster.image} alt="" loading="lazy" />
                 </div>
-                <h3>{cluster.title}</h3>
-                <p>{cluster.body}</p>
-                <ul>
-                  {cluster.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <div className={cluster.tone}>
+                  <div className="feature-num">0{i + 1}</div>
+                  <div className="card-icons">
+                    <span className="card-badge">
+                      <Icon name={cluster.icon as IconName} size={26} />
+                    </span>
+                  </div>
+                  <h3>{cluster.title}</h3>
+                  <p>{cluster.body}</p>
+                  <ul>
+                    {cluster.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <div className="action-row">
+                    <a className="btn btn-primary" href={company.whatsapp}>
+                      Discuss this
+                      <span className="arr" aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
               </article>
             ))}
           </div>

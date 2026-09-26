@@ -105,7 +105,7 @@ export const serviceClusters = [
   },
   {
     title: 'Consulting, launch and support',
-    image: u('photo-1553877522-43269d4ea984', 1200),
+    image: u('photo-1600880292203-757bb62b4baf', 1200),
     icon: 'compass',
     tone: 'tone-ember',
     body: 'Advice before you spend, steady hands at launch, and someone to call after. Modernize what you have or keep it running while you grow.',
