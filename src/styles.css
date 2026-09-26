@@ -301,13 +301,13 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: rgba(255, 253, 251, 0.28);
-  backdrop-filter: blur(10px) saturate(1.3);
-  -webkit-backdrop-filter: blur(10px) saturate(1.3);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(24, 7, 7, 0.62);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 10px 24px -20px rgba(109, 11, 11, 0.25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 20px 44px -18px rgba(10, 3, 3, 0.65);
   border-radius: 16px;
   padding: 0.45rem 0.65rem 0.45rem 0.9rem;
 }
@@ -315,9 +315,9 @@ main {
 .brand-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.18rem;
   text-decoration: none;
-  color: var(--ink);
+  color: #fff;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.2rem;
@@ -326,7 +326,7 @@ main {
 }
 
 .brand-link:hover {
-  color: var(--ink);
+  color: #fff;
 }
 
 .brand-logo {
@@ -334,7 +334,7 @@ main {
   height: 56px;
   object-fit: contain;
   background: transparent;
-  filter: drop-shadow(0 6px 12px rgba(144, 16, 16, 0.35));
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
 }
 
 .site-nav ul {
@@ -349,7 +349,7 @@ main {
 .site-nav a {
   display: inline-block;
   text-decoration: none;
-  color: var(--ink);
+  color: rgba(255, 255, 255, 0.92);
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.78rem;
@@ -361,8 +361,8 @@ main {
 }
 
 .site-nav a:hover {
-  color: var(--brand);
-  background: rgba(144, 16, 16, 0.09);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .site-nav a[aria-current='page'] {
@@ -397,9 +397,9 @@ main {
   display: none;
   font: inherit;
   font-weight: 600;
-  color: var(--ink);
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(144, 16, 16, 0.2);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-sm);
   padding: 0.5rem 1rem;
   touch-action: manipulation;
@@ -416,9 +416,9 @@ main {
     position: absolute;
     inset-inline: 0.5rem;
     top: calc(100% + 10px);
-    background: rgba(255, 253, 251, 0.97);
+    background: rgba(24, 7, 7, 0.96);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(144, 16, 16, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 20px;
     box-shadow: var(--shadow);
   }
@@ -1830,7 +1830,7 @@ main {
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.2rem;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
