@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { Reveal, RevealHeading } from '../components/Reveal'
-import { Banner, ContactBand, banners } from '../components/Sections'
+import { Reveal } from '../components/Reveal'
+import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
+import { Icon, type IconName } from '../components/icons'
 import { products } from '../site'
 
 export const Route = createFileRoute('/products')({ component: Products })
@@ -20,22 +21,38 @@ function Products() {
       />
       <div className="section">
         <div className="wrap">
+          <SectionHead
+            eyebrow="Live products"
+            ghost="LIVE"
+            title={
+              <>
+                Two products. <span className="hl">One standard.</span>
+              </>
+            }
+            lede="Built to the same bar as client work. Practical, maintained and supported."
+          />
           <div className="grid-2">
             {products.map((product) => (
               <article className="product-hero-card" key={product.name}>
                 <img src={product.image} alt="" loading="lazy" />
                 <div className="shade" aria-hidden="true" />
                 <div className="card-body">
+                  <span className="product-icon">
+                    <Icon name={product.icon as IconName} size={24} />
+                  </span>
                   <span className="kicker on-dark">{product.tag}</span>
-                  <RevealHeading level={3}>
-                    <span style={{ color: '#fff' }}>{product.name}</span>
-                  </RevealHeading>
+                  <h3 style={{ color: '#fff', fontSize: '1.6rem' }}>
+                    {product.name}
+                  </h3>
                   <p>{product.body}</p>
                   <ul className="plain-list" style={{ color: 'rgba(255,255,255,0.85)' }}>
                     {product.points.map((point) => (
                       <li key={point}>{point}</li>
                     ))}
                   </ul>
+                  <p style={{ color: 'rgba(255,255,255,0.85)', marginTop: '0.9rem' }}>
+                    {product.extra}
+                  </p>
                   <div className="action-row">
                     <a
                       className="btn btn-light"
@@ -44,6 +61,7 @@ function Products() {
                       rel="noreferrer"
                     >
                       {product.cta}
+                      <span className="arr" aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>

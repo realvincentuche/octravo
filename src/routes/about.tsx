@@ -106,22 +106,32 @@ function About() {
         </div>
       </div>
       <div className="section">
-        <div className="wrap">
-          <SectionHead
-            eyebrow="Customers"
-            ghost="WHO"
-            title={
-              <>
-                Who we <span className="hl">serve</span>
-              </>
-            }
-            lede="Our work fits any team where software, automation or better customer communication moves the needle."
-          />
-          <ul className="plain-list">
-            {industries.map((industry) => (
-              <li key={industry}>{industry}</li>
-            ))}
-          </ul>
+        <div className="wrap split">
+          <div>
+            <SectionHead
+              eyebrow="Customers"
+              ghost="WHO"
+              title={
+                <>
+                  Who we <span className="hl">serve</span>
+                </>
+              }
+              lede="Our work fits any team where software, automation or better customer communication moves the needle."
+            />
+            <ul className="plain-list">
+              {industries.map((industry) => (
+                <li key={industry}>{industry}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="split-media">
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=70"
+              alt="Team members working together around a table"
+              loading="lazy"
+            />
+            <div className="float-chip">Eleven industries. One approach.</div>
+          </div>
         </div>
       </div>
       <div className="section section-alt">

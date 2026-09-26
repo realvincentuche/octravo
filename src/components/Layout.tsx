@@ -1,7 +1,7 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import { useState } from 'react'
 
-import { company, nav, serviceClusters } from '../site'
+import { company, nav, services } from '../site'
 import { Icon, type IconName } from './icons'
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -128,11 +128,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <nav aria-label="Services">
               <p className="footer-title">Services</p>
               <ul className="footer-nav">
-                {serviceClusters.map((cluster) => (
-                  <li key={cluster.title}>
+                {services.map((service) => (
+                  <li key={service.title}>
                     <Link to="/services">
-                      <Icon name={cluster.icon as IconName} size={17} />
-                      <span>{cluster.title}</span>
+                      <Icon name={service.icon as IconName} size={17} />
+                      <span>{service.short}</span>
                     </Link>
                   </li>
                 ))}
@@ -206,7 +206,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <span>© Octravo Limited</span>
             <span>{company.registration}</span>
             <span>{company.website}</span>
-            <a href="#main">Back to top</a>
+            <a className="to-top" href="#main" aria-label="Back to top">
+              <Icon name="up" />
+            </a>
           </div>
         </div>
       </footer>

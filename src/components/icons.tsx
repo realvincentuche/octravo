@@ -137,6 +137,42 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M12 7v5l3.5 2" />
     </>
   ),
+  up: (
+    <>
+      <path d="M12 19V5M6 11l6-6 6 6" />
+    </>
+  ),
+  card: (
+    <>
+      <rect x="3" y="6" width="18" height="13" rx="2" />
+      <path d="M3 10.5h18M7 15h4" />
+    </>
+  ),
+  cloud: (
+    <>
+      <path d="M7 18.5a4.5 4.5 0 1 1 .9-8.9A5.5 5.5 0 0 1 18.6 11 3.6 3.6 0 0 1 17.5 18.5H7z" />
+      <path d="M12 12v4M10 14.5h4" />
+    </>
+  ),
+  wrench: (
+    <>
+      <path d="M21 6.5a5.2 5.2 0 0 1-7 4.9L7 18.4a2.1 2.1 0 0 1-3-3l7-7A5.2 5.2 0 0 1 17.6 3l-2.7 2.7 2.4 2.4L21 6.5z" />
+    </>
+  ),
+  headset: (
+    <>
+      <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+      <rect x="3" y="13" width="4" height="7" rx="1.5" />
+      <rect x="17" y="13" width="4" height="7" rx="1.5" />
+      <path d="M19 20a4 4 0 0 1-4 2h-2.5" />
+    </>
+  ),
+  link: (
+    <>
+      <path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5" />
+      <path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5" />
+    </>
+  ),
 }
 
 export type IconName = keyof typeof paths

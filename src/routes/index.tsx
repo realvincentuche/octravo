@@ -6,7 +6,7 @@ import { ContactBand, SectionHead } from '../components/Sections'
 import { Stats } from '../components/Stats'
 import { useDocumentTitle } from '../components/useDocumentTitle'
 import { Icon, type IconName } from '../components/icons'
-import { company, gallery, industries, processSteps, products, serviceClusters } from '../site'
+import { company, gallery, industries, processSteps, products, services } from '../site'
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -20,7 +20,10 @@ function Home() {
       <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
           {industries.concat(industries).map((name, i) => (
-            <span key={`${name}-${i}`}>{name} ✦</span>
+            <span className="mq-item" key={`${name}-${i}`}>
+              <span>{name}</span>
+              <span className="mq-sep">✦</span>
+            </span>
           ))}
         </div>
       </div>
@@ -31,7 +34,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="section section-alt" style={{ paddingTop: 0 }}>
+      <div className="section section-alt">
         <div className="wrap">
           <SectionHead
             eyebrow="What we do"
@@ -44,17 +47,17 @@ function Home() {
             lede="Twelve service areas in four groups. Every card below is real work we ship."
           />
           <div className="grid-2">
-            {serviceClusters.map((cluster) => (
-              <article className="card image-card" key={cluster.title}>
-                <img src={cluster.image} alt="" loading="lazy" />
-                <div className={`card-body ${cluster.tone}`}>
+            {services.slice(0, 4).map((service) => (
+              <article className="card image-card" key={service.title}>
+                <img src={service.image} alt="" loading="lazy" />
+                <div className={`card-body ${service.tone}`}>
                   <div className="card-icons">
                     <span className="card-badge">
-                      <Icon name={cluster.icon as IconName} size={24} />
+                      <Icon name={service.icon as IconName} size={24} />
                     </span>
                   </div>
-                  <h3>{cluster.title}</h3>
-                  <p>{cluster.body}</p>
+                  <h3>{service.title}</h3>
+                  <p>{service.body}</p>
                 </div>
               </article>
             ))}
@@ -90,8 +93,9 @@ function Home() {
               <li>Supported after launch. Updates, issues and small changes.</li>
             </ul>
             <div className="action-row">
-              <Link className="btn btn-ghost" to="/about">
+              <Link className="btn btn-primary" to="/about">
                 More about us
+                <span className="arr" aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -161,17 +165,17 @@ function Home() {
               </>
             }
           />
-          <ol className="steps">
+          <ol className="timeline">
             {processSteps.map((step, i) => (
-              <li key={step.title}>
-                <div className="step-top">
+              <li key={step.title} className={`t-tone-${i % 4}`}>
+                <span className="t-node" aria-hidden="true">
+                  <Icon name={step.icon as IconName} />
+                </span>
+                <div className="t-card">
                   <span className="step-pill">Step {i + 1}</span>
-                  <span className="step-icon">
-                    <Icon name={step.icon as IconName} size={22} />
-                  </span>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
                 </div>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
               </li>
             ))}
           </ol>

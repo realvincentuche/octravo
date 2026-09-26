@@ -45,7 +45,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <div className="stats-band">
+    <div className="stats-plain">
       {stats.map((s) => (
         <div key={s.label}>
           <Counter value={s.value} suffix={s.suffix} />
