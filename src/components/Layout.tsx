@@ -1,7 +1,8 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import { useState } from 'react'
 
-import { company, nav } from '../site'
+import { company, nav, serviceClusters } from '../site'
+import { Icon } from './icons'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
@@ -17,9 +18,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/" className="brand-link" aria-label="Octravo home">
             <img
               src="/logo.png"
-              alt=""
-              width={76}
-              height={76}
+              alt="Octravo logo"
+              width={88}
+              height={88}
               className="brand-logo"
             />
             <span>Octravo</span>
@@ -78,17 +79,41 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <span className="footer-brand">
                 <img
                   src="/logo.png"
-                  alt=""
-                  width={76}
-                  height={76}
+                  alt="Octravo logo"
+                  width={96}
+                  height={96}
                   className="brand-logo"
                 />
                 <span>Octravo</span>
               </span>
               <p>{company.tagline}.</p>
               <p>{company.address}.</p>
+              <div className="icon-row">
+                <a
+                  className="icon-btn"
+                  href={company.whatsapp}
+                  aria-label="Chat with Octravo on WhatsApp"
+                >
+                  <Icon name="chat" />
+                </a>
+                <a
+                  className="icon-btn"
+                  href={company.phoneHref}
+                  aria-label={`Call Octravo on ${company.phoneDisplay}`}
+                >
+                  <Icon name="phone" />
+                </a>
+                <a
+                  className="icon-btn"
+                  href={`mailto:${company.email}`}
+                  aria-label={`Email Octravo at ${company.email}`}
+                >
+                  <Icon name="mail" />
+                </a>
+              </div>
             </div>
             <nav aria-label="Footer">
+              <p className="footer-title">Explore</p>
               <ul className="footer-nav">
                 {nav.map((item) => (
                   <li key={item.to}>
@@ -101,15 +126,37 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </nav>
             <div>
+              <p className="footer-title">Reach us</p>
               <ul className="footer-nav">
                 <li>
-                  <a href={company.whatsapp}>WhatsApp: {company.phoneDisplay}</a>
+                  <a href={company.whatsapp}>
+                    <Icon name="chat" size={17} />
+                    <span>WhatsApp: {company.phoneDisplay}</span>
+                  </a>
                 </li>
                 <li>
-                  <a href={company.phoneHref}>Call: {company.phoneDisplay}</a>
+                  <a href={company.phoneHref}>
+                    <Icon name="phone" size={17} />
+                    <span>Call: {company.phoneDisplay}</span>
+                  </a>
                 </li>
                 <li>
-                  <a href={`mailto:${company.email}`}>{company.email}</a>
+                  <a href={`mailto:${company.email}`}>
+                    <Icon name="mail" size={17} />
+                    <span>{company.email}</span>
+                  </a>
+                </li>
+                <li>
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                    }}
+                  >
+                    <Icon name="pin" size={17} />
+                    <span>Oregun, Lagos, Nigeria</span>
+                  </span>
                 </li>
                 <li>
                   <a
@@ -117,7 +164,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    CVToEdge
+                    <Icon name="doc" size={17} />
+                    <span>CVToEdge</span>
                   </a>
                 </li>
                 <li>
@@ -126,16 +174,31 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Octravo Assistant
+                    <Icon name="cpu" size={17} />
+                    <span>Octravo Assistant</span>
                   </a>
                 </li>
               </ul>
+              <p className="footer-title" style={{ marginTop: '1.4rem' }}>
+                Services
+              </p>
+              <ul className="footer-nav">
+                {serviceClusters.map((cluster) => (
+                  <li key={cluster.title}>
+                    <Link to="/services">{cluster.title}</Link>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
+          <div className="footer-ghost" aria-hidden="true">
+            OCTRAVO
           </div>
           <div className="footer-base">
             <span>© Octravo Limited</span>
             <span>{company.registration}</span>
             <span>{company.website}</span>
+            <a href="#main">Back to top</a>
           </div>
         </div>
       </footer>

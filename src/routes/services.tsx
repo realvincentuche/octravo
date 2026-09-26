@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { Reveal, RevealHeading } from '../components/Reveal'
-import { Banner, ContactBand, banners } from '../components/Sections'
+import { Reveal } from '../components/Reveal'
+import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
+import { Icon, type IconName } from '../components/icons'
 import { serviceClusters } from '../site'
 
 export const Route = createFileRoute('/services')({ component: Services })
@@ -20,19 +21,33 @@ function Services() {
       />
       <div className="section">
         <div className="wrap">
+          <SectionHead
+            eyebrow="Service groups"
+            ghost="DO"
+            title={
+              <>
+                Four groups. <span className="hl">Twelve ways we help.</span>
+              </>
+            }
+          />
           <div className="grid-2">
             {serviceClusters.map((cluster) => (
-              <article className="card image-card" key={cluster.title}>
-                <img src={cluster.image} alt="" loading="lazy" />
-                <div className="card-body">
-                  <RevealHeading level={3}>{cluster.title}</RevealHeading>
-                  <p>{cluster.body}</p>
-                  <ul>
-                    {cluster.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+              <article className={`card ${cluster.tone}`} key={cluster.title}>
+                <div className="card-icons">
+                  <span className="card-badge">
+                    <Icon name={cluster.icon as IconName} size={24} />
+                  </span>
+                  <span className="card-ghost" aria-hidden="true">
+                    <Icon name={cluster.icon as IconName} size={120} />
+                  </span>
                 </div>
+                <h3>{cluster.title}</h3>
+                <p>{cluster.body}</p>
+                <ul>
+                  {cluster.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>

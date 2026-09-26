@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { Reveal, RevealHeading } from '../components/Reveal'
-import { Banner, banners } from '../components/Sections'
+import { Reveal } from '../components/Reveal'
+import { Banner, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
+import { Icon } from '../components/icons'
 import { company, role, roleApplyHref } from '../site'
 
 export const Route = createFileRoute('/careers')({ component: Careers })
@@ -20,8 +21,25 @@ function Careers() {
       />
       <div className="section">
         <div className="wrap">
-          <article className="card">
-            <RevealHeading level={3}>{role.title}</RevealHeading>
+          <SectionHead
+            eyebrow="Open role"
+            ghost="JOIN"
+            title={
+              <>
+                {role.title} <span className="hl">wanted</span>
+              </>
+            }
+          />
+          <article className="card tone-red">
+            <div className="card-icons">
+              <span className="card-badge">
+                <Icon name="users" size={24} />
+              </span>
+              <span className="card-ghost" aria-hidden="true">
+                <Icon name="users" size={120} />
+              </span>
+            </div>
+            <h3>{role.title}</h3>
             <p className="lede">{role.summary}</p>
             <dl className="facts">
               <div>
@@ -46,7 +64,15 @@ function Careers() {
       </div>
       <div className="section section-alt">
         <div className="wrap">
-          <RevealHeading>What you will do</RevealHeading>
+          <SectionHead
+            eyebrow="Duties"
+            ghost="DO"
+            title={
+              <>
+                What you will <span className="hl">do</span>
+              </>
+            }
+          />
           <ul className="plain-list">
             {role.duties.map((duty) => (
               <li key={duty}>{duty}</li>
@@ -56,7 +82,15 @@ function Careers() {
       </div>
       <div className="section">
         <div className="wrap">
-          <RevealHeading>What you need to bring</RevealHeading>
+          <SectionHead
+            eyebrow="Requirements"
+            ghost="YOU"
+            title={
+              <>
+                What you <span className="hl">bring</span>
+              </>
+            }
+          />
           <ul className="plain-list">
             {role.requirements.map((requirement) => (
               <li key={requirement}>{requirement}</li>
@@ -66,6 +100,7 @@ function Careers() {
           <div className="action-row">
             <a className="btn btn-primary" href={roleApplyHref}>
               Apply by email
+              <span className="arr" aria-hidden="true">→</span>
             </a>
             <a className="btn btn-ghost" href={company.whatsapp}>
               Ask about the role

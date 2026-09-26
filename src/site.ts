@@ -61,6 +61,8 @@ export const serviceClusters = [
   {
     title: 'Websites and web apps',
     image: u('photo-1467232004584-a241de8bcf5d', 1200),
+    icon: 'globe',
+    tone: 'tone-red',
     body: 'Professional sites, customer portals, dashboards, booking systems and SaaS platforms. Designed around your content, built to run fast on phones and desktops.',
     items: [
       'Corporate and service websites',
@@ -74,6 +76,8 @@ export const serviceClusters = [
   {
     title: 'Custom software and integrations',
     image: u('photo-1555066931-4365d14bab8c', 1200),
+    icon: 'code',
+    tone: 'tone-gold',
     body: 'Systems built around the way you already work. Databases, roles, rules and reports, connected to the payment, accounting and messaging tools you use.',
     items: [
       'Requirements analysis and solution design',
@@ -87,6 +91,8 @@ export const serviceClusters = [
   {
     title: 'AI and automation',
     image: u('photo-1677442136019-21780ecad995', 1200),
+    icon: 'cpu',
+    tone: 'tone-plum',
     body: 'Artificial intelligence where it pays. Customer assistants that answer from your own business knowledge, plus automation that clears repetitive work from your team.',
     items: [
       'AI customer assistants',
@@ -100,6 +106,8 @@ export const serviceClusters = [
   {
     title: 'Consulting, launch and support',
     image: u('photo-1553877522-43269d4ea984', 1200),
+    icon: 'compass',
+    tone: 'tone-ember',
     body: 'Advice before you spend, steady hands at launch, and someone to call after. Modernize what you have or keep it running while you grow.',
     items: [
       'Technology assessment and planning',
@@ -115,26 +123,32 @@ export const serviceClusters = [
 export const processSteps = [
   {
     title: 'Discover',
+    icon: 'search',
     body: 'We learn your workflow, users and goals before we recommend anything.',
   },
   {
     title: 'Design',
+    icon: 'pen',
     body: 'You see the structure, screens and scope in plain terms. No surprises later.',
   },
   {
     title: 'Build',
+    icon: 'code',
     body: 'We develop in working slices you can review while the system takes shape.',
   },
   {
     title: 'Test',
+    icon: 'check',
     body: 'We check features, integrations, permissions and the journeys that matter.',
   },
   {
     title: 'Launch',
+    icon: 'rocket',
     body: 'We deploy, configure operations and hand over docs, access and training.',
   },
   {
     title: 'Support',
+    icon: 'shield',
     body: 'We monitor real use, fix issues and improve the system as you grow.',
   },
 ]
@@ -145,6 +159,7 @@ export const products = [
     href: 'https://cvtoedge.com',
     tag: 'Career technology',
     image: u('photo-1454165804606-c3d57bc86b40', 1200),
+    icon: 'doc',
     body: 'An AI powered CV platform that helps job seekers sharpen wording, fix gaps and present their experience with confidence.',
     points: [
       'AI assisted CV refinement and scoring',
@@ -158,6 +173,7 @@ export const products = [
     href: 'https://assistant.octravo.com',
     tag: 'Business software',
     image: u('photo-1512941937669-90a1b58e7e9c', 1200),
+    icon: 'chat',
     body: 'An AI assistant that answers customers from your own business knowledge and helps with service and sales, starting with WhatsApp.',
     points: [
       'Answers grounded in your business info',
@@ -187,26 +203,38 @@ export const gallery = [
 export const values = [
   {
     title: 'Practical innovation',
+    icon: 'bulb',
+    tone: 'tone-gold',
     body: 'We chase technology that fixes real problems and pays for itself.',
   },
   {
     title: 'Customer value',
+    icon: 'heart',
+    tone: 'tone-red',
     body: 'We judge our work by your operations, experience and revenue.',
   },
   {
     title: 'Integrity',
+    icon: 'shield',
+    tone: 'tone-ember',
     body: 'We say what things cost, what they take and what they cannot do.',
   },
   {
     title: 'Engineering care',
+    icon: 'sliders',
+    tone: 'tone-plum',
     body: 'We build systems that are secure, maintainable and easy to hand over.',
   },
   {
     title: 'Learning',
+    icon: 'book',
+    tone: 'tone-red',
     body: 'We stay current so your systems do not fall behind.',
   },
   {
     title: 'Ownership',
+    icon: 'flag',
+    tone: 'tone-gold',
     body: 'We take responsibility for the quality of what we ship.',
   },
 ]

@@ -1,8 +1,9 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 
-import { Reveal, RevealHeading } from '../components/Reveal'
-import { Banner, ContactBand, banners } from '../components/Sections'
+import { Reveal } from '../components/Reveal'
+import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
+import { Icon, type IconName } from '../components/icons'
 import { company, industries, values } from '../site'
 
 export const Route = createFileRoute('/about')({ component: About })
@@ -20,10 +21,26 @@ function About() {
       />
       <div className="section">
         <div className="wrap">
-          <RevealHeading>What we believe</RevealHeading>
+          <SectionHead
+            eyebrow="Values"
+            ghost="WHY"
+            title={
+              <>
+                What we <span className="hl">believe</span>
+              </>
+            }
+          />
           <div className="grid-3">
             {values.map((value) => (
-              <div className="card" key={value.title}>
+              <div className={`card ${value.tone}`} key={value.title}>
+                <div className="card-icons">
+                  <span className="card-badge">
+                    <Icon name={value.icon as IconName} size={24} />
+                  </span>
+                  <span className="card-ghost" aria-hidden="true">
+                    <Icon name={value.icon as IconName} size={120} />
+                  </span>
+                </div>
                 <h3>{value.title}</h3>
                 <p>{value.body}</p>
               </div>
@@ -33,9 +50,25 @@ function About() {
       </div>
       <div className="section section-alt">
         <div className="wrap">
-          <RevealHeading>Two sides of one company</RevealHeading>
+          <SectionHead
+            eyebrow="Structure"
+            ghost="TWO"
+            title={
+              <>
+                Two sides of <span className="hl">one company</span>
+              </>
+            }
+          />
           <div className="grid-2">
-            <div className="card">
+            <div className="card tone-red">
+              <div className="card-icons">
+                <span className="card-badge">
+                  <Icon name="sliders" size={24} />
+                </span>
+                <span className="card-ghost" aria-hidden="true">
+                  <Icon name="sliders" size={120} />
+                </span>
+              </div>
               <h3>Technology services</h3>
               <p>
                 Custom software, websites, apps, AI, automation, integrations,
@@ -48,7 +81,15 @@ function About() {
                 </Link>
               </div>
             </div>
-            <div className="card">
+            <div className="card tone-gold">
+              <div className="card-icons">
+                <span className="card-badge">
+                  <Icon name="rocket" size={24} />
+                </span>
+                <span className="card-ghost" aria-hidden="true">
+                  <Icon name="rocket" size={120} />
+                </span>
+              </div>
               <h3>Software products</h3>
               <p>
                 CVToEdge helps job seekers present their experience. Octravo
@@ -66,12 +107,16 @@ function About() {
       </div>
       <div className="section">
         <div className="wrap">
-          <RevealHeading>Who we serve</RevealHeading>
-          <p>
-            Our work fits any team where software, automation or better customer
-            communication moves the needle. Recent demand comes from these
-            corners.
-          </p>
+          <SectionHead
+            eyebrow="Customers"
+            ghost="WHO"
+            title={
+              <>
+                Who we <span className="hl">serve</span>
+              </>
+            }
+            lede="Our work fits any team where software, automation or better customer communication moves the needle."
+          />
           <ul className="plain-list">
             {industries.map((industry) => (
               <li key={industry}>{industry}</li>
@@ -81,7 +126,15 @@ function About() {
       </div>
       <div className="section section-alt">
         <div className="wrap">
-          <RevealHeading>Company facts</RevealHeading>
+          <SectionHead
+            eyebrow="Facts"
+            ghost="RC"
+            title={
+              <>
+                Company <span className="hl">facts</span>
+              </>
+            }
+          />
           <dl className="facts">
             <div>
               <dt>Legal name</dt>
