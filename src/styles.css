@@ -284,6 +284,13 @@ main {
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.16);
 }
 
+@media (max-width: 560px) {
+  .sec-ghost {
+    font-size: 2.5rem;
+    top: -0.55em;
+  }
+}
+
 /* Floating transparent nav */
 
 .site-header {
@@ -301,15 +308,24 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: rgba(255, 253, 251, 0.28);
-  backdrop-filter: blur(10px) saturate(1.3);
-  -webkit-backdrop-filter: blur(10px) saturate(1.3);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 10px 24px -20px rgba(109, 11, 11, 0.25);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid transparent;
+  box-shadow: none;
   border-radius: 16px;
   padding: 0.45rem 0.65rem 0.45rem 0.9rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.site-header.is-scrolled .header-bar {
+  background: rgba(24, 7, 7, 0.72);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 18px 40px -18px rgba(10, 3, 3, 0.6);
 }
 
 .brand-link {
@@ -335,7 +351,7 @@ main {
   height: 56px;
   object-fit: contain;
   background: transparent;
-  filter: drop-shadow(0 6px 12px rgba(144, 16, 16, 0.35));
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
 }
 
 .site-nav ul {
@@ -745,6 +761,24 @@ main {
 
 .hero-slider.is-right .hero-shade {
   transform: scaleX(-1);
+}
+
+@media (max-width: 700px) {
+  .hero-content {
+    padding-block: 7.5rem 6rem;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+
+  .hero-dots button {
+    width: 26px;
+  }
+
+  .hero-dots button[aria-current='true'] {
+    width: 40px;
+  }
 }
 
 .hero-content > * {
@@ -1710,6 +1744,131 @@ main {
 .product-icon-float svg {
   width: 46px;
   height: 46px;
+}
+
+/* Product page: clean split panels (no overlay text) */
+
+.product-panels {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  margin-top: 2.5rem;
+}
+
+.product-panel {
+  display: grid;
+  background: #fff;
+  border: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(109, 11, 11, 0.06),
+    0 24px 60px -30px rgba(109, 11, 11, 0.4);
+}
+
+@media (min-width: 900px) {
+  .product-panel {
+    grid-template-columns: 1fr 1.05fr;
+  }
+
+  .product-panel.flip .panel-media {
+    order: 2;
+  }
+}
+
+.panel-media {
+  position: relative;
+  min-height: 280px;
+}
+
+.panel-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 899px) {
+  .panel-media {
+    min-height: 240px;
+  }
+
+  .panel-media img {
+    position: relative;
+    height: 240px;
+  }
+}
+
+.panel-body {
+  padding: clamp(1.8rem, 4vw, 2.8rem);
+  position: relative;
+}
+
+.panel-top {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.panel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  color: #fff;
+  flex: none;
+  box-shadow: 0 12px 24px -10px rgba(109, 11, 11, 0.55);
+}
+
+.panel-tag {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+}
+
+.panel-body h3 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-bottom: 0.6rem;
+}
+
+.panel-body > p {
+  color: var(--ink-soft);
+}
+
+.panel-points {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.panel-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.panel-points svg {
+  flex: none;
+  margin-top: 0.2rem;
+  color: var(--brand);
+}
+
+.panel-extra {
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.98rem;
 }
 
 /* Full-width CTA */

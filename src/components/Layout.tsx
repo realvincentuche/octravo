@@ -1,5 +1,5 @@
 import { Link, useLocation } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { company, nav, services } from '../site'
 import { Icon, type IconName } from './icons'
@@ -7,17 +7,31 @@ import { Icon, type IconName } from './icons'
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
 
   return (
     <div className="shell">
       <a className="skip-link" href="#main">
         Skip to main content
       </a>
-      <header className="site-header">
+      <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
         <div className="wrap header-bar">
           <Link to="/" className="brand-link" aria-label="Octravo home">
             <img
-              src="/logo.png"
+              src="/logo-white.png"
               alt="Octravo logo"
               width={88}
               height={88}

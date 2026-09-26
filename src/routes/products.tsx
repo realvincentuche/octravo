@@ -4,9 +4,11 @@ import { Reveal } from '../components/Reveal'
 import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
 import { Icon, type IconName } from '../components/icons'
-import { products } from '../site'
+import { company, products } from '../site'
 
 export const Route = createFileRoute('/products')({ component: Products })
+
+const tones = ['tone-red', 'tone-gold'] as const
 
 function Products() {
   useDocumentTitle('Products')
@@ -20,7 +22,7 @@ function Products() {
         image={banners.products}
         tone={2}
         primary={{ label: 'Visit CVToEdge', href: 'https://cvtoedge.com' }}
-        secondary={{ label: 'Meet the Assistant', to: '/contact' }}
+        secondary={{ label: 'Talk to us', to: '/contact' }}
       />
       <div className="section">
         <div className="wrap">
@@ -34,37 +36,47 @@ function Products() {
             }
             lede="Built to the same bar as client work. Practical, maintained and supported."
           />
-          <div className="grid-2">
-            {products.map((product) => (
-              <article className="product-hero-card" key={product.name}>
-                <img src={product.image} alt="" loading="lazy" />
-                <div className="shade" aria-hidden="true" />
-                <div className="card-body">
-                  <span className="product-icon-float">
-                    <Icon name={product.icon as IconName} size={46} />
-                  </span>
-                  <span className="kicker on-dark">{product.tag}</span>
-                  <h3 style={{ color: '#fff', fontSize: '1.6rem' }}>
-                    {product.name}
-                  </h3>
+          <div className="product-panels">
+            {products.map((product, i) => (
+              <article
+                className={`product-panel${i % 2 === 1 ? ' flip' : ''}`}
+                key={product.name}
+              >
+                <div className="panel-media">
+                  <img src={product.image} alt={`${product.name} preview`} loading="lazy" />
+                </div>
+                <div className="panel-body">
+                  <div className={`panel-top ${tones[i % tones.length]}`}>
+                    <span className="card-badge">
+                      <Icon name={product.icon as IconName} size={24} />
+                    </span>
+                    <span>
+                      <span className="panel-tag">{product.tag}</span>
+                      <h3 style={{ margin: 0 }}>{product.name}</h3>
+                    </span>
+                  </div>
                   <p>{product.body}</p>
-                  <ul className="plain-list" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  <ul className="panel-points">
                     {product.points.map((point) => (
-                      <li key={point}>{point}</li>
+                      <li key={point}>
+                        <Icon name="check" size={18} />
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
-                  <p style={{ color: 'rgba(255,255,255,0.85)', marginTop: '0.9rem' }}>
-                    {product.extra}
-                  </p>
+                  <p className="panel-extra">{product.extra}</p>
                   <div className="action-row">
                     <a
-                      className="btn btn-light"
+                      className="btn btn-primary"
                       href={product.href}
                       target="_blank"
                       rel="noreferrer"
                     >
                       {product.cta}
                       <span className="arr" aria-hidden="true">→</span>
+                    </a>
+                    <a className="btn btn-ghost" href={company.whatsapp}>
+                      Ask about it
                     </a>
                   </div>
                 </div>
