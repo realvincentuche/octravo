@@ -17,7 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="wrap header-bar">
           <Link to="/" className="brand-link" aria-label="Octravo home">
             <img
-              src="/logo-white.png"
+              src="/logo.png"
               alt="Octravo logo"
               width={88}
               height={88}

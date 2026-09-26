@@ -301,13 +301,13 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: rgba(24, 7, 7, 0.62);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 253, 251, 0.88);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 20px 44px -18px rgba(10, 3, 3, 0.65);
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 20px 44px -18px rgba(109, 11, 11, 0.4);
   border-radius: 16px;
   padding: 0.45rem 0.65rem 0.45rem 0.9rem;
 }
@@ -317,7 +317,7 @@ main {
   align-items: center;
   gap: 0.18rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--ink);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.2rem;
@@ -326,7 +326,7 @@ main {
 }
 
 .brand-link:hover {
-  color: #fff;
+  color: var(--ink);
 }
 
 .brand-logo {
@@ -334,7 +334,7 @@ main {
   height: 56px;
   object-fit: contain;
   background: transparent;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 6px 12px rgba(144, 16, 16, 0.35));
 }
 
 .site-nav ul {
@@ -349,7 +349,7 @@ main {
 .site-nav a {
   display: inline-block;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.78rem;
@@ -361,8 +361,8 @@ main {
 }
 
 .site-nav a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.14);
+  color: var(--brand);
+  background: rgba(144, 16, 16, 0.09);
 }
 
 .site-nav a[aria-current='page'] {
@@ -397,9 +397,9 @@ main {
   display: none;
   font: inherit;
   font-weight: 600;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(144, 16, 16, 0.22);
   border-radius: var(--radius-sm);
   padding: 0.5rem 1rem;
   touch-action: manipulation;
@@ -416,9 +416,9 @@ main {
     position: absolute;
     inset-inline: 0.5rem;
     top: calc(100% + 10px);
-    background: rgba(24, 7, 7, 0.96);
+    background: rgba(255, 253, 251, 0.97);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(144, 16, 16, 0.14);
     border-radius: 20px;
     box-shadow: var(--shadow);
   }
@@ -706,6 +706,28 @@ main {
 
 .hero-content.align-right .action-row {
   justify-content: flex-end;
+}
+
+.hero-content.align-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content.align-center .hero-inner {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.hero-content.align-center .hero-inner h1 {
+  margin-inline: auto;
+}
+
+.hero-content.align-center .hero-inner p {
+  margin-inline: auto;
+}
+
+.hero-content.align-center .action-row {
+  justify-content: center;
 }
 
 .hero-slider.is-right .hero-shade {
@@ -1704,8 +1726,9 @@ main {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(184, 118, 12, 0.96), rgba(112, 66, 5, 0.88)),
-    radial-gradient(480px 240px at 90% 20%, rgba(255, 222, 130, 0.4), transparent 60%);
+    linear-gradient(100deg, rgba(24, 7, 7, 0.92) 0%, rgba(109, 11, 11, 0.62) 48%, rgba(24, 7, 7, 0.35) 100%),
+    linear-gradient(0deg, rgba(24, 7, 7, 0.55) 0%, transparent 55%),
+    radial-gradient(560px 280px at 85% 20%, rgba(242, 179, 61, 0.34), transparent 60%);
 }
 
 .cta-full .orb {

@@ -24,7 +24,8 @@ export function HeroSlider() {
   }, [index, paused])
 
   const slide = heroSlides[index]
-  const right = index % 2 === 1
+  const align = index === 0 ? 'center' : index % 2 === 1 ? 'right' : 'left'
+  const right = align === 'right'
 
   return (
     <div
@@ -54,7 +55,7 @@ export function HeroSlider() {
       <div className="orb orb-b" aria-hidden="true" />
 
       <div
-        className={`hero-content${right ? ' align-right' : ''}`}
+        className={`hero-content${align === 'right' ? ' align-right' : align === 'center' ? ' align-center' : ''}`}
         key={index}
       >
         <div className="hero-inner">
