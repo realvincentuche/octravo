@@ -77,6 +77,19 @@ export const heroSlides = [
   },
 ]
 
+export const socials = [
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/octravo',
+    icon: 'linkedin',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/octravo',
+    icon: 'instagram',
+  },
+] as const
+
 export const stats = [
   { value: 12, suffix: '', label: 'Service areas, one team' },
   { value: 6, suffix: '', label: 'Steps from idea to support' },

@@ -173,6 +173,19 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5" />
     </>
   ),
+  linkedin: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <path d="M8 10.5V17M8 7.2v.3M12 17v-3.8c0-1.2 1-2.2 2.2-2.2s2.3 1 2.3 2.2V17M12 10.5V17" />
+    </>
+  ),
+  instagram: (
+    <>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="3.8" />
+      <circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none" />
+    </>
+  ),
 }
 
 export type IconName = keyof typeof paths

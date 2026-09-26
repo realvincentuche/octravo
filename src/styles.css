@@ -2145,22 +2145,35 @@ main {
   color: var(--gold);
 }
 
-.to-top {
+.to-top-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 70;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  color: #ffe9c9;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  transition: background 0.25s ease, transform 0.2s ease, color 0.2s ease;
-}
-
-.to-top:hover {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
   color: #fff;
   background: linear-gradient(135deg, var(--brand-bright), var(--brand-deep));
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 18px 36px -14px rgba(109, 11, 11, 0.7);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.to-top-float.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.to-top-float:hover {
   transform: translateY(-3px);
 }
 

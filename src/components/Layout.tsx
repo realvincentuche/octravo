@@ -1,7 +1,7 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
-import { company, nav, services } from '../site'
+import { company, nav, services, socials } from '../site'
 import { Icon, type IconName } from './icons'
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -21,6 +21,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setOpen(false)
   }, [location.pathname])
+
+  const toTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <div className="shell">
@@ -124,6 +128,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 >
                   <Icon name="mail" />
                 </a>
+                {socials.map((social) => (
+                  <a
+                    key={social.name}
+                    className="icon-btn"
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Octravo on ${social.name}`}
+                  >
+                    <Icon name={social.icon as IconName} />
+                  </a>
+                ))}
               </div>
             </div>
             <nav aria-label="Footer">
@@ -173,6 +189,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <span>{company.email}</span>
                   </a>
                 </li>
+                {socials.map((social) => (
+                  <li key={social.name}>
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Icon name={social.icon as IconName} size={17} />
+                      <span>{social.name}</span>
+                    </a>
+                  </li>
+                ))}
                 <li>
                   <span
                     style={{
@@ -220,12 +248,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <span>© Octravo Limited</span>
             <span>{company.registration}</span>
             <span>{company.website}</span>
-            <a className="to-top" href="#main" aria-label="Back to top">
-              <Icon name="up" />
-            </a>
           </div>
         </div>
       </footer>
+      <button
+        type="button"
+        className={`to-top-float${scrolled ? ' is-visible' : ''}`}
+        onClick={toTop}
+        aria-label="Back to top"
+        tabIndex={scrolled ? 0 : -1}
+      >
+        <Icon name="up" />
+      </button>
     </div>
   )
 }
