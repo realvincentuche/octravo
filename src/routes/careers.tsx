@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Reveal, RevealHeading } from '../components/Reveal'
-import { PageHeader } from '../components/Sections'
+import { Banner, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
 import { company, role, roleApplyHref } from '../site'
 
@@ -12,9 +12,11 @@ function Careers() {
 
   return (
     <Reveal>
-      <PageHeader
+      <Banner
         title="One open role"
         lede="We hire slowly and deliberately. Right now there is a single seat that matters more than any other."
+        image={banners.careers}
+        cta
       />
       <div className="section">
         <div className="wrap">

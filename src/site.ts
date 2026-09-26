@@ -26,9 +26,41 @@ export const nav = [
   { to: '/contact', label: 'Contact' },
 ] as const
 
+const u = (id: string, w = 1400) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=70`
+
+export const heroSlides = [
+  {
+    image: u('photo-1522071820081-009f0129c71c', 1800),
+    kicker: 'Software, AI and automation',
+    title: 'Software that fixes how your business runs',
+    body: 'Websites, web apps, AI assistants and automation for growing teams. Designed around your workflow, supported after launch.',
+  },
+  {
+    image: u('photo-1551434678-e076c223a692', 1800),
+    kicker: 'Custom builds that ship',
+    title: 'From scattered tools to one system',
+    body: 'Portals, dashboards, bookings and SaaS platforms. Connected to payments, messaging and the tools you already use.',
+  },
+  {
+    image: u('photo-1600880292203-757bb62b4baf', 1800),
+    kicker: 'A partner in Lagos',
+    title: 'Someone to call after go-live',
+    body: 'Discovery to deployment to support. Docs, training and a team that picks up the phone.',
+  },
+]
+
+export const stats = [
+  { value: 12, suffix: '', label: 'Service areas, one team' },
+  { value: 6, suffix: '', label: 'Steps from idea to support' },
+  { value: 2, suffix: '', label: 'Products live in market' },
+  { value: 11, suffix: '+', label: 'Industries we serve' },
+]
+
 export const serviceClusters = [
   {
     title: 'Websites and web apps',
+    image: u('photo-1467232004584-a241de8bcf5d', 1200),
     body: 'Professional sites, customer portals, dashboards, booking systems and SaaS platforms. Designed around your content, built to run fast on phones and desktops.',
     items: [
       'Corporate and service websites',
@@ -41,6 +73,7 @@ export const serviceClusters = [
   },
   {
     title: 'Custom software and integrations',
+    image: u('photo-1555066931-4365d14bab8c', 1200),
     body: 'Systems built around the way you already work. Databases, roles, rules and reports, connected to the payment, accounting and messaging tools you use.',
     items: [
       'Requirements analysis and solution design',
@@ -53,6 +86,7 @@ export const serviceClusters = [
   },
   {
     title: 'AI and automation',
+    image: u('photo-1677442136019-21780ecad995', 1200),
     body: 'Artificial intelligence where it pays. Customer assistants that answer from your own business knowledge, plus automation that clears repetitive work from your team.',
     items: [
       'AI customer assistants',
@@ -65,6 +99,7 @@ export const serviceClusters = [
   },
   {
     title: 'Consulting, launch and support',
+    image: u('photo-1553877522-43269d4ea984', 1200),
     body: 'Advice before you spend, steady hands at launch, and someone to call after. Modernize what you have or keep it running while you grow.',
     items: [
       'Technology assessment and planning',
@@ -109,6 +144,7 @@ export const products = [
     name: 'CVToEdge',
     href: 'https://cvtoedge.com',
     tag: 'Career technology',
+    image: u('photo-1454165804606-c3d57bc86b40', 1200),
     body: 'An AI powered CV platform that helps job seekers sharpen wording, fix gaps and present their experience with confidence.',
     points: [
       'AI assisted CV refinement and scoring',
@@ -121,6 +157,7 @@ export const products = [
     name: 'Octravo Assistant',
     href: 'https://assistant.octravo.com',
     tag: 'Business software',
+    image: u('photo-1512941937669-90a1b58e7e9c', 1200),
     body: 'An AI assistant that answers customers from your own business knowledge and helps with service and sales, starting with WhatsApp.',
     points: [
       'Answers grounded in your business info',
@@ -129,6 +166,22 @@ export const products = [
     ],
     cta: 'Visit Octravo Assistant',
   },
+]
+
+export const banners = {
+  services: u('photo-1460925895917-afdab827c52f', 1800),
+  products: u('photo-1519389950473-47ba0277781c', 1800),
+  about: u('photo-1521737604893-d14cc237f11d', 1800),
+  contact: u('photo-1423666639041-f56000c27a9a', 1800),
+  careers: u('photo-1521791136064-7986c2920216', 1800),
+  cta: u('photo-1556761175-b413da4baf72', 1800),
+}
+
+export const gallery = [
+  { image: u('photo-1531482615713-2afd69097998', 900), alt: 'Team reviewing work on a laptop' },
+  { image: u('photo-1573164713988-8665fc963095', 900), alt: 'Specialist working at a screen' },
+  { image: u('photo-1560250097-0b93528c311a', 900), alt: 'Business owner in an office' },
+  { image: u('photo-1555949963-aa79dcee981c', 900), alt: 'Code on a developer screen' },
 ]
 
 export const values = [

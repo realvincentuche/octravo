@@ -48,6 +48,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  className="nav-cta"
+                  href={company.whatsapp}
+                  onClick={() => setOpen(false)}
+                >
+                  Start a project
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

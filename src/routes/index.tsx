@@ -1,10 +1,11 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 
-import { OMark } from '../components/OMark'
+import { HeroSlider } from '../components/HeroSlider'
 import { Reveal, RevealHeading } from '../components/Reveal'
 import { ContactBand } from '../components/Sections'
+import { Stats } from '../components/Stats'
 import { useDocumentTitle } from '../components/useDocumentTitle'
-import { company, processSteps, products, serviceClusters } from '../site'
+import { company, gallery, industries, processSteps, products, serviceClusters } from '../site'
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -13,124 +14,124 @@ function Home() {
 
   return (
     <Reveal>
-      <div className="hero">
-        <div className="wrap hero-grid">
-          <div className="hero-fade">
-            <h1>Software that fixes how your business runs</h1>
-            <p className="lede">
-              Octravo designs and builds websites, web apps, AI assistants and
-              automation for small and medium businesses. Practical systems,
-              built in Lagos, supported after launch.
-            </p>
-            <div className="action-row">
-              <a className="btn btn-primary" href={company.whatsapp}>
-                Chat on WhatsApp
-              </a>
-              <Link className="btn btn-ghost" to="/services">
-                See services
-              </Link>
-            </div>
-          </div>
-          <div className="hero-mark" aria-hidden="true">
-            <OMark animated />
-          </div>
-        </div>
-      </div>
+      <HeroSlider />
 
-      <div className="section section-alt">
-        <div className="wrap">
-          <RevealHeading>One team from idea to support</RevealHeading>
-          <div className="grid-3">
-            <div className="card">
-              <h3>Business first</h3>
-              <p>
-                We study your workflow before we write code, so the system fits
-                the work instead of forcing new habits.
-              </p>
-            </div>
-            <div className="card">
-              <h3>Built to hand over</h3>
-              <p>
-                You get docs, access and training. Your team can run the system
-                with or without us.
-              </p>
-            </div>
-            <div className="card">
-              <h3>Supported after launch</h3>
-              <p>
-                We monitor, fix and improve. One call covers updates, issues
-                and small changes.
-              </p>
-            </div>
-          </div>
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {industries.concat(industries).map((name, i) => (
+            <span key={`${name}-${i}`}>{name} ✦</span>
+          ))}
         </div>
       </div>
 
       <div className="section">
         <div className="wrap">
-          <RevealHeading>What we can build for you</RevealHeading>
-          <p>
-            Twelve service areas, grouped by the problem they fix. Start with
-            the group that matches your pain.
+          <Stats />
+        </div>
+      </div>
+
+      <div className="section section-alt" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <span className="kicker">What we do</span>
+          <RevealHeading>Pick the problem. We bring the system.</RevealHeading>
+          <p className="lede">
+            Twelve service areas in four groups. Every card below is real work
+            we ship, with photos from the kind of teams we serve.
           </p>
           <div className="grid-2">
             {serviceClusters.map((cluster) => (
-              <div className="card cluster-card" key={cluster.title}>
-                <h3>{cluster.title}</h3>
-                <p>{cluster.body}</p>
-              </div>
+              <article className="card image-card" key={cluster.title}>
+                <img src={cluster.image} alt="" loading="lazy" />
+                <div className="card-body">
+                  <h3>{cluster.title}</h3>
+                  <p>{cluster.body}</p>
+                </div>
+              </article>
             ))}
           </div>
           <div className="action-row">
-            <Link className="btn btn-ghost" to="/services">
+            <Link className="btn btn-primary" to="/services">
               Full service list
             </Link>
+            <a className="btn btn-ghost" href={company.whatsapp}>
+              Ask which fits me
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="wrap split">
+          <div>
+            <span className="kicker">Why Octravo</span>
+            <RevealHeading>One team from idea to support</RevealHeading>
+            <p className="lede">
+              We study your workflow before we write code. You get docs, access
+              and training. And one number to call after launch.
+            </p>
+            <ul className="plain-list">
+              <li>Business first. The system fits the work, not the reverse.</li>
+              <li>Built to hand over. Your team can run it with or without us.</li>
+              <li>Supported after launch. Updates, issues and small changes.</li>
+            </ul>
+            <div className="action-row">
+              <Link className="btn btn-ghost" to="/about">
+                More about us
+              </Link>
+            </div>
+          </div>
+          <div className="split-media">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=70"
+              alt="Two colleagues planning around a laptop"
+              loading="lazy"
+            />
+            <div className="float-chip">Based in Lagos. Built for growth.</div>
           </div>
         </div>
       </div>
 
       <div className="section section-alt">
         <div className="wrap">
+          <span className="kicker">Products</span>
           <RevealHeading>Software you can use today</RevealHeading>
-          <p>
-            Alongside client work, we run our own products for recurring needs.
+          <p className="lede">
+            Client work taught us which problems repeat. We turned two of them
+            into products.
           </p>
           <div className="grid-2">
             {products.map((product) => (
-              <div className="card" key={product.name}>
-                <div className="product-frame" role="img" aria-label={`${product.name} preview placeholder`}>
-                  Preview image coming soon
+              <article className="product-hero-card" key={product.name}>
+                <img src={product.image} alt="" loading="lazy" />
+                <div className="shade" aria-hidden="true" />
+                <div className="card-body">
+                  <span className="kicker on-dark">{product.tag}</span>
+                  <h3 style={{ color: '#fff', fontSize: '1.6rem' }}>{product.name}</h3>
+                  <p>{product.body}</p>
+                  <div className="action-row">
+                    <a
+                      className="btn btn-light"
+                      href={product.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {product.cta}
+                    </a>
+                    <Link className="btn btn-ghost on-dark" to="/products">
+                      Learn more
+                    </Link>
+                  </div>
                 </div>
-                <h3>{product.name}</h3>
-                <p>{product.body}</p>
-                <div className="action-row">
-                  <a
-                    className="btn btn-ghost"
-                    href={product.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {product.cta}
-                  </a>
-                </div>
-              </div>
+              </article>
             ))}
-          </div>
-          <div className="action-row">
-            <Link className="btn btn-ghost" to="/products">
-              About the products
-            </Link>
           </div>
         </div>
       </div>
 
       <div className="section">
         <div className="wrap">
-          <RevealHeading>How a project runs</RevealHeading>
-          <p>
-            Six steps, in order. You always know what happens next and what we
-            need from you.
-          </p>
+          <span className="kicker">Process</span>
+          <RevealHeading>Six steps. No surprises.</RevealHeading>
           <ol className="steps">
             {processSteps.map((step) => (
               <li key={step.title}>
@@ -144,29 +145,12 @@ function Home() {
 
       <div className="section section-alt">
         <div className="wrap">
-          <RevealHeading>Octravo at a glance</RevealHeading>
-          <dl className="facts">
-            <div>
-              <dt>Company</dt>
-              <dd>Octravo Limited, a private technology company</dd>
-            </div>
-            <div>
-              <dt>Base</dt>
-              <dd>Oregun, Lagos, Nigeria. Serves clients across Africa</dd>
-            </div>
-            <div>
-              <dt>Services</dt>
-              <dd>Websites, web apps, custom software, AI, automation, integrations and support</dd>
-            </div>
-            <div>
-              <dt>Products</dt>
-              <dd>CVToEdge for job seekers, Octravo Assistant for businesses</dd>
-            </div>
-          </dl>
-          <div className="action-row">
-            <Link className="btn btn-ghost" to="/about">
-              More about us
-            </Link>
+          <span className="kicker">In the field</span>
+          <RevealHeading>Teams, tools and real desks</RevealHeading>
+          <div className="gallery-strip">
+            {gallery.map((g) => (
+              <img key={g.image} src={g.image} alt={g.alt} loading="lazy" />
+            ))}
           </div>
         </div>
       </div>
