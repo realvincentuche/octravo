@@ -25,7 +25,7 @@ const channels = [
     body: 'Prefer to talk it through. Calls run Monday to Friday, 9am to 5pm West Africa Time.',
     href: company.phoneHref,
     cta: `Call ${company.phoneDisplay}`,
-    primary: false,
+    primary: true,
   },
   {
     icon: 'mail',
@@ -34,7 +34,7 @@ const channels = [
     body: 'Best for detail. Include what you do, the problem, your timeline and any files that explain it.',
     href: emailHref,
     cta: 'Send the email',
-    primary: false,
+    primary: true,
   },
 ] as const
 
