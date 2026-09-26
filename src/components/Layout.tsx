@@ -78,7 +78,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <span className="footer-brand">
                 <img
-                  src="/logo.png"
+                  src="/logo-white.png"
                   alt="Octravo logo"
                   width={96}
                   height={96}
