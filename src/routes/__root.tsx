@@ -1,42 +1,38 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { Outlet, createRootRoute } from '@tanstack/react-router'
 
-import appCss from '../styles.css?url'
+import { Layout } from '../components/Layout'
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      {
-        charSet: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        title: 'TanStack Start Starter',
-      },
-    ],
-    links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootDocument,
+  component: Root,
+  notFoundComponent: NotFound,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function Root() {
   return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
+    <Layout>
+      <Outlet />
+    </Layout>
+  )
+}
 
-        <Scripts />
-      </body>
-    </html>
+function NotFound() {
+  return (
+    <div className="section">
+      <div className="wrap">
+        <h1>This page is missing</h1>
+        <p>
+          The address you typed does not match anything on this site. The pages
+          below will get you back on track.
+        </p>
+        <div className="action-row">
+          <a className="btn btn-primary" href="/">
+            Go home
+          </a>
+          <a className="btn btn-ghost" href="/contact">
+            Contact us
+          </a>
+        </div>
+      </div>
+    </div>
   )
 }
