@@ -14,10 +14,13 @@ function Careers() {
   return (
     <Reveal>
       <Banner
-        title="One open role"
-        lede="We hire slowly and deliberately. Right now there is a single seat that matters more than any other."
+        eyebrow="Join the team"
+        title="One seat. A pipeline to own."
+        lede="We are hiring a Sales and Marketing Executive in Oregun, Lagos. Own outreach, fill the calendar and launch products into the market."
         image={banners.careers}
-        cta
+        tone={0}
+        primary={{ label: 'Apply by email', href: roleApplyHref }}
+        secondary={{ label: 'Ask on WhatsApp', to: '/contact' }}
       />
       <div className="section">
         <div className="wrap">

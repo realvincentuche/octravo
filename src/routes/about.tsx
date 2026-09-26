@@ -14,10 +14,13 @@ function About() {
   return (
     <Reveal>
       <Banner
-        title="A technology partner, not a vendor"
-        lede="Octravo exists because too many businesses buy software that ignores how they work. We start from the workflow, then choose the technology."
+        eyebrow="Who we are"
+        title="Business minds that build software"
+        lede="We started Octravo to close the gap between business needs and usable technology. Workflow first, code second, support always."
         image={banners.about}
-        cta
+        tone={3}
+        primary={{ label: 'See what we do', href: '/services' }}
+        secondary={{ label: 'Talk to us', to: '/contact' }}
       />
       <div className="section">
         <div className="wrap">

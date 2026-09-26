@@ -4,7 +4,7 @@ import { Reveal } from '../components/Reveal'
 import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
 import { Icon, type IconName } from '../components/icons'
-import { services, serviceWhats } from '../site'
+import { company, services, serviceWhats } from '../site'
 
 export const Route = createFileRoute('/services')({ component: Services })
 
@@ -14,10 +14,16 @@ function Services() {
   return (
     <Reveal>
       <Banner
-        title="Services that match your problem"
-        lede="Twelve service areas, each with real deliverables. Start from the pain you feel and end with a conversation, not a quote form."
+        eyebrow="Services"
+        title="Fix the work that eats your week"
+        lede="Every group below is a full service area with its own photo, deliverables and next step. Start from the pain, end with a conversation."
         image={banners.services}
-        cta
+        tone={1}
+        primary={{
+          label: 'Chat on WhatsApp',
+          href: company.whatsapp,
+        }}
+        secondary={{ label: 'All contact options', to: '/contact' }}
       />
       <div className="section">
         <div className="wrap">
@@ -26,9 +32,10 @@ function Services() {
             ghost="DO"
             title={
               <>
-                Twelve ways <span className="hl">we help</span>
+                Every way <span className="hl">we help</span>
               </>
             }
+            lede="Browse each area, see what is inside, then discuss the one that matches your pain."
           />
           <div className="feature-list">
             {services.map((service, i) => (

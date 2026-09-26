@@ -28,7 +28,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="section">
+      <div className="section stats-section">
         <div className="wrap">
           <Stats />
         </div>

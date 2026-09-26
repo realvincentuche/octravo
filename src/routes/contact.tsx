@@ -44,10 +44,13 @@ function Contact() {
   return (
     <Reveal>
       <Banner
-        title="Talk to a person, fast"
-        lede="No forms, no tickets, no waiting room. Pick the channel that suits you and we reply with next steps."
+        eyebrow="Get replies, not tickets"
+        title="Answers in hours, not days"
+        lede="WhatsApp, call or email. A person reads your message and replies with next steps, not a script."
         image={banners.contact}
-        cta
+        tone={4}
+        primary={{ label: 'Chat on WhatsApp', href: company.whatsapp }}
+        secondary={{ label: 'See open role', to: '/careers' }}
       />
       <div className="section">
         <div className="wrap">

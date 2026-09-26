@@ -20,35 +20,39 @@ export function PageHeader({
 }
 
 export function Banner({
+  eyebrow,
   title,
   lede,
   image,
-  cta,
+  tone = 0,
+  primary,
+  secondary,
 }: {
+  eyebrow: string
   title: string
   lede: string
   image: string
-  cta?: boolean
+  tone?: number
+  primary: { label: string; href: string }
+  secondary: { label: string; to: string }
 }) {
   return (
     <div className="banner">
       <img src={image} alt="" loading="eager" fetchPriority="high" />
-      <div className="banner-shade" aria-hidden="true" />
+      <div className={`banner-shade tone-${tone}`} aria-hidden="true" />
       <div className="wrap banner-inner">
-        <span className="kicker on-dark">Octravo Limited</span>
+        <span className="kicker on-dark">{eyebrow}</span>
         <h1>{title}</h1>
         <p>{lede}</p>
-        {cta && (
-          <div className="action-row">
-            <a className="btn btn-primary" href={company.whatsapp}>
-              Chat on WhatsApp
-              <span className="arr" aria-hidden="true">→</span>
-            </a>
-            <a className="btn btn-ghost on-dark" href={company.phoneHref}>
-              Call the office
-            </a>
-          </div>
-        )}
+        <div className="action-row">
+          <a className="btn btn-primary" href={primary.href}>
+            {primary.label}
+            <span className="arr" aria-hidden="true">→</span>
+          </a>
+          <Link className="btn btn-ghost on-dark" to={secondary.to}>
+            {secondary.label}
+          </Link>
+        </div>
       </div>
     </div>
   )

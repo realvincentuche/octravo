@@ -14,10 +14,13 @@ function Products() {
   return (
     <Reveal>
       <Banner
-        title="Products we run ourselves"
-        lede="Client work taught us which problems repeat. We turned two of them into software anyone can use."
+        eyebrow="Live products"
+        title="Software that already works"
+        lede="Two products, running in the market today. One sharpens careers, the other answers customers. Try either in minutes."
         image={banners.products}
-        cta
+        tone={2}
+        primary={{ label: 'Visit CVToEdge', href: 'https://cvtoedge.com' }}
+        secondary={{ label: 'Meet the Assistant', to: '/contact' }}
       />
       <div className="section">
         <div className="wrap">

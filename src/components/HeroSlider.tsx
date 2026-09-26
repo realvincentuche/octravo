@@ -1,7 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
-import { company, heroSlides } from '../site'
+import { heroSlides } from '../site'
+
+function isExternal(href: string) {
+  return href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')
+}
 
 export function HeroSlider() {
   const [index, setIndex] = useState(0)
@@ -44,7 +48,7 @@ export function HeroSlider() {
             />
           </div>
         ))}
-        <div className="hero-shade" />
+        <div className={`hero-shade tone-${slide.tone}`} />
       </div>
       <div className="orb orb-a" aria-hidden="true" />
       <div className="orb orb-b" aria-hidden="true" />
@@ -58,12 +62,25 @@ export function HeroSlider() {
           <h1>{slide.title}</h1>
           <p>{slide.body}</p>
           <div className="action-row">
-            <a className="btn btn-primary" href={company.whatsapp}>
-              Chat on WhatsApp
-              <span className="arr" aria-hidden="true">→</span>
-            </a>
-            <Link className="btn btn-ghost on-dark" to="/services">
-              See services
+            {isExternal(slide.primary.href) ? (
+              <a
+                className="btn btn-primary"
+                href={slide.primary.href}
+                {...(slide.primary.href.startsWith('http')
+                  ? { target: '_blank', rel: 'noreferrer' }
+                  : {})}
+              >
+                {slide.primary.label}
+                <span className="arr" aria-hidden="true">→</span>
+              </a>
+            ) : (
+              <Link className="btn btn-primary" to={slide.primary.href}>
+                {slide.primary.label}
+                <span className="arr" aria-hidden="true">→</span>
+              </Link>
+            )}
+            <Link className="btn btn-ghost on-dark" to={slide.secondary.to}>
+              {slide.secondary.label}
               <span className="arr" aria-hidden="true">→</span>
             </Link>
           </div>
