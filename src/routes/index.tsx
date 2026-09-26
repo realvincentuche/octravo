@@ -91,9 +91,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="section section-alt">
+      <div className="section section-ink">
         <div className="wrap">
-          <span className="kicker">Products</span>
+          <span className="kicker on-dark">Products</span>
           <RevealHeading>Software you can use today</RevealHeading>
           <p className="lede">
             Client work taught us which problems repeat. We turned two of them

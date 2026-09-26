@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { company, heroSlides } from '../site'
@@ -48,6 +49,8 @@ export function HeroSlider() {
         ))}
         <div className="hero-shade" />
       </div>
+      <div className="orb orb-a" aria-hidden="true" />
+      <div className="orb orb-b" aria-hidden="true" />
 
       <div className="hero-content" key={index}>
         <span className="kicker on-dark">{slide.kicker}</span>
@@ -56,10 +59,12 @@ export function HeroSlider() {
         <div className="action-row">
           <a className="btn btn-primary" href={company.whatsapp}>
             Chat on WhatsApp
+            <span className="arr" aria-hidden="true">→</span>
           </a>
-          <a className="btn btn-ghost on-dark" href="/services">
+          <Link className="btn btn-ghost on-dark" to="/services">
             See services
-          </a>
+            <span className="arr" aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
 
@@ -70,6 +75,10 @@ export function HeroSlider() {
         <button type="button" aria-label="Next slide" onClick={() => go(1)}>
           ›
         </button>
+      </div>
+
+      <div className="scroll-cue" aria-hidden="true">
+        <span />
       </div>
 
       <div className="hero-dots" role="tablist" aria-label="Hero slides">

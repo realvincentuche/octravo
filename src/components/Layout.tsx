@@ -2,7 +2,6 @@ import { Link, useLocation } from '@tanstack/react-router'
 import { useState } from 'react'
 
 import { company, nav } from '../site'
-import { OMark } from './OMark'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
@@ -16,7 +15,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="site-header">
         <div className="wrap header-bar">
           <Link to="/" className="brand-link" aria-label="Octravo home">
-            <OMark className="brand-mark" />
+            <img
+              src="/logo.png"
+              alt=""
+              width={76}
+              height={76}
+              className="brand-logo"
+            />
             <span>Octravo</span>
           </Link>
           <button
@@ -71,7 +76,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="footer-grid">
             <div>
               <span className="footer-brand">
-                <OMark className="brand-mark" />
+                <img
+                  src="/logo.png"
+                  alt=""
+                  width={76}
+                  height={76}
+                  className="brand-logo"
+                />
                 <span>Octravo</span>
               </span>
               <p>{company.tagline}.</p>

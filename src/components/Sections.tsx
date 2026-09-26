@@ -68,6 +68,7 @@ export function ContactBand({
         <div className="cta-band">
           <img src={banners.cta} alt="" loading="lazy" />
           <div className="shade" aria-hidden="true" />
+          <div className="orb orb-b" aria-hidden="true" />
           <div className="cta-inner">
             <span className="kicker on-dark">Start here</span>
             <h2 style={{ color: '#fff' }}>{title}</h2>
@@ -75,6 +76,7 @@ export function ContactBand({
             <div className="action-row">
               <a className="btn btn-light" href={company.whatsapp}>
                 Chat on WhatsApp
+                <span className="arr" aria-hidden="true">→</span>
               </a>
               <a className="btn btn-ghost on-dark" href={company.phoneHref}>
                 Call the office
