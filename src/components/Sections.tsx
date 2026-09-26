@@ -61,14 +61,16 @@ export function SectionHead({
   title,
   lede,
   ghost,
+  center = false,
 }: {
   eyebrow: string
   title: React.ReactNode
   lede?: string
   ghost?: string
+  center?: boolean
 }) {
   return (
-    <div className="sec-head" data-reveal>
+    <div className={`sec-head${center ? ' sec-head-center' : ''}`} data-reveal>
       {ghost && (
         <span className="sec-ghost" aria-hidden="true">
           {ghost}

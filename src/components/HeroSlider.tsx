@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { company, heroSlides } from '../site'
 
@@ -7,10 +7,6 @@ export function HeroSlider() {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const timer = useRef<number | null>(null)
-
-  const go = useCallback((dir: 1 | -1) => {
-    setIndex((i) => (i + dir + heroSlides.length) % heroSlides.length)
-  }, [])
 
   useEffect(() => {
     if (paused) return
@@ -24,10 +20,11 @@ export function HeroSlider() {
   }, [index, paused])
 
   const slide = heroSlides[index]
+  const right = index % 2 === 1
 
   return (
     <div
-      className="hero-slider"
+      className={`hero-slider${right ? ' is-right' : ''}`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
@@ -52,29 +49,25 @@ export function HeroSlider() {
       <div className="orb orb-a" aria-hidden="true" />
       <div className="orb orb-b" aria-hidden="true" />
 
-      <div className="hero-content" key={index}>
-        <span className="kicker on-dark">{slide.kicker}</span>
-        <h1>{slide.title}</h1>
-        <p>{slide.body}</p>
-        <div className="action-row">
-          <a className="btn btn-primary" href={company.whatsapp}>
-            Chat on WhatsApp
-            <span className="arr" aria-hidden="true">→</span>
-          </a>
-          <Link className="btn btn-ghost on-dark" to="/services">
-            See services
-            <span className="arr" aria-hidden="true">→</span>
-          </Link>
+      <div
+        className={`hero-content${right ? ' align-right' : ''}`}
+        key={index}
+      >
+        <div className="hero-inner">
+          <span className="kicker on-dark">{slide.kicker}</span>
+          <h1>{slide.title}</h1>
+          <p>{slide.body}</p>
+          <div className="action-row">
+            <a className="btn btn-primary" href={company.whatsapp}>
+              Chat on WhatsApp
+              <span className="arr" aria-hidden="true">→</span>
+            </a>
+            <Link className="btn btn-ghost on-dark" to="/services">
+              See services
+              <span className="arr" aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className="hero-arrows">
-        <button type="button" aria-label="Previous slide" onClick={() => go(-1)}>
-          ‹
-        </button>
-        <button type="button" aria-label="Next slide" onClick={() => go(1)}>
-          ›
-        </button>
       </div>
 
       <div className="scroll-cue" aria-hidden="true">

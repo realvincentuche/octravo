@@ -159,6 +159,7 @@ function Home() {
           <SectionHead
             eyebrow="Process"
             ghost="HOW"
+            center
             title={
               <>
                 Six steps. <span className="hl">No surprises.</span>

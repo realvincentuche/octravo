@@ -37,8 +37,8 @@ function Products() {
                 <img src={product.image} alt="" loading="lazy" />
                 <div className="shade" aria-hidden="true" />
                 <div className="card-body">
-                  <span className="product-icon">
-                    <Icon name={product.icon as IconName} size={24} />
+                  <span className="product-icon-float">
+                    <Icon name={product.icon as IconName} size={46} />
                   </span>
                   <span className="kicker on-dark">{product.tag}</span>
                   <h3 style={{ color: '#fff', fontSize: '1.6rem' }}>
