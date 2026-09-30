@@ -91,9 +91,9 @@ export const socials = [
 ] as const
 
 export const stats = [
-  { value: 12, suffix: '', label: 'Service areas, one team' },
-  { value: 6, suffix: '', label: 'Steps from idea to support' },
-  { value: 2, suffix: '', label: 'Products live in market' },
+  { value: 12, suffix: '', label: 'Service areas' },
+  { value: 6, suffix: '', label: 'Steps to value' },
+  { value: 2, suffix: '', label: 'Live products' },
   { value: 11, suffix: '+', label: 'Industries we serve' },
 ]
 
