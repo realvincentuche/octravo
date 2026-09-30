@@ -964,7 +964,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(12, 5, 5, 0.55);
+  background: rgba(12, 5, 5, 0.72);
   pointer-events: none;
 }
 
@@ -1003,11 +1003,11 @@ main {
   font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--paper);
   margin: 0.9rem auto 0;
   max-width: 24ch;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(0 0 0 / 50%);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   padding: 0.35rem 1.5rem;
