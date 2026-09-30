@@ -230,12 +230,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li>
                   <a
-                    href="https://assistant.octravo.com"
+                    href="https://hatdesk.com"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <Icon name="cpu" size={17} />
-                    <span>Octravo Assistant</span>
+                    <span>HatDesk</span>
                   </a>
                 </li>
               </ul>

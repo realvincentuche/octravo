@@ -53,8 +53,8 @@ export const heroSlides = [
     tone: 2,
     kicker: 'AI that answers customers',
     title: 'Never miss a customer message again',
-    body: 'Octravo Assistant answers from your own business knowledge on WhatsApp, so questions get replies while you work.',
-    primary: { label: 'Meet the Assistant', href: 'https://assistant.octravo.com' },
+    body: 'HatDesk answers from your own business knowledge on WhatsApp, so questions get replies while you work.',
+    primary: { label: 'Meet HatDesk', href: 'https://hatdesk.com' },
     secondary: { label: 'See AI services', to: '/services' },
   },
   {
@@ -411,8 +411,8 @@ export const products = [
     cta: 'Visit CVToEdge',
   },
   {
-    name: 'Octravo Assistant',
-    href: 'https://assistant.octravo.com',
+    name: 'HatDesk',
+    href: 'https://hatdesk.com',
     tag: 'Business software',
     image: u('photo-1512941937669-90a1b58e7e9c', 1200),
     icon: 'chat',
@@ -424,7 +424,7 @@ export const products = [
     ],
     extra:
       'Built for businesses drowning in repeat questions. You load products, policies, prices and FAQs once, and the assistant answers customers in context. Dashboards track conversations while subscriptions and usage billing keep costs tied to value.',
-    cta: 'Visit Octravo Assistant',
+    cta: 'Visit HatDesk',
   },
 ]
 
@@ -504,13 +504,13 @@ export const role = {
   type: 'Full time',
   closeNote: 'Early applications reviewed first. The role stays open until filled.',
   summary:
-    'Own the pipeline. Find SME leads, run outreach, book discovery calls, follow up quotes and help launch CVToEdge and Octravo Assistant into the market.',
+    'Own the pipeline. Find SME leads, run outreach, book discovery calls, follow up quotes and help launch CVToEdge and HatDesk into the market.',
   duties: [
     'Find and qualify SME leads across Lagos and beyond',
     'Run outreach by phone, WhatsApp, email and visits',
     'Book discovery calls and keep the calendar full',
     'Follow up proposals and quotes until each deal closes or dies cleanly',
-    'Support product launches, demos and onboarding for CVToEdge and Octravo Assistant',
+    'Support product launches, demos and onboarding for CVToEdge and HatDesk',
     'Keep the pipeline sheet current and report numbers every week',
   ],
   requirements: [
