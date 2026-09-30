@@ -174,6 +174,7 @@ export const services = [
   {
     title: 'Web Application Development',
     short: 'Web Apps',
+    slug: 'web-apps',
     image: u('photo-1551288049-bebda4e38f71', 1200),
     icon: 'layers',
     tone: 'tone-red',
@@ -190,6 +191,7 @@ export const services = [
   {
     title: 'Website Design & Development',
     short: 'Websites',
+    slug: 'websites',
     image: u('photo-1581291518857-4e27b48ff24e', 1200),
     icon: 'globe',
     tone: 'tone-gold',
@@ -206,6 +208,7 @@ export const services = [
   {
     title: 'Custom Software Development',
     short: 'Custom Software',
+    slug: 'custom-software',
     image: u('photo-1461749280684-dccba630e2f6', 1200),
     icon: 'code',
     tone: 'tone-plum',
@@ -222,6 +225,7 @@ export const services = [
   {
     title: 'AI Solutions & Intelligent Automation',
     short: 'AI Solutions',
+    slug: 'ai-solutions',
     image: u('photo-1677442136019-21780ecad995', 1200),
     icon: 'cpu',
     tone: 'tone-ember',
@@ -238,6 +242,7 @@ export const services = [
   {
     title: 'Business Process Automation',
     short: 'Automation',
+    slug: 'automation',
     image: u('photo-1526374965328-7f61d4dc18c5', 1200),
     icon: 'bolt',
     tone: 'tone-red',
@@ -254,6 +259,7 @@ export const services = [
   {
     title: 'API Development & System Integration',
     short: 'Integrations',
+    slug: 'integrations',
     image: u('photo-1451187580459-43490279c0fa', 1200),
     icon: 'link',
     tone: 'tone-gold',
@@ -270,6 +276,7 @@ export const services = [
   {
     title: 'Payment & Transaction Technology',
     short: 'Payments',
+    slug: 'payments',
     image: u('photo-1556742049-0cfed4f6a45d', 1200),
     icon: 'card',
     tone: 'tone-plum',
@@ -286,6 +293,7 @@ export const services = [
   {
     title: 'SaaS & Digital Platform Development',
     short: 'SaaS Platforms',
+    slug: 'saas-platforms',
     image: u('photo-1551434678-e076c223a692', 1200),
     icon: 'layers',
     tone: 'tone-ember',
@@ -302,6 +310,7 @@ export const services = [
   {
     title: 'Technology Consulting & Solution Architecture',
     short: 'Consulting',
+    slug: 'consulting',
     image: u('photo-1552664730-d307ca884978', 1200),
     icon: 'compass',
     tone: 'tone-red',
@@ -318,6 +327,7 @@ export const services = [
   {
     title: 'Software Modernization & Maintenance',
     short: 'Modernization',
+    slug: 'modernization',
     image: u('photo-1581091226825-a6a2a5aee158', 1200),
     icon: 'wrench',
     tone: 'tone-gold',
@@ -334,6 +344,7 @@ export const services = [
   {
     title: 'Deployment, Cloud & Technical Operations',
     short: 'Cloud & DevOps',
+    slug: 'cloud-devops',
     image: u('photo-1558494949-ef010cbdcc31', 1200),
     icon: 'cloud',
     tone: 'tone-plum',
@@ -350,6 +361,7 @@ export const services = [
   {
     title: 'Ongoing Support & Managed Technology',
     short: 'Support',
+    slug: 'support',
     image: u('photo-1517245386807-bb43f82c33c4', 1200),
     icon: 'headset',
     tone: 'tone-ember',
@@ -401,6 +413,7 @@ export const processSteps = [
 export const products = [
   {
     name: 'CVToEdge',
+    slug: 'cvtoedge',
     href: 'https://cvtoedge.com',
     tag: 'Career technology',
     image: u('photo-1454165804606-c3d57bc86b40', 1200),
@@ -417,6 +430,7 @@ export const products = [
   },
   {
     name: 'HatDesk',
+    slug: 'hatdesk',
     href: 'https://hatdesk.com',
     tag: 'Business software',
     image: u('photo-1512941937669-90a1b58e7e9c', 1200),

@@ -1,7 +1,7 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
-import { company, nav, services, socials } from '../site'
+import { company, nav, products, services, socials } from '../site'
 import { Icon, type IconName } from './icons'
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -160,7 +160,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="footer-nav">
                 {services.map((service) => (
                   <li key={service.title}>
-                    <Link to="/services">
+                    <Link to="/services" hash={`service-${service.slug}`}>
                       <Icon name={service.icon as IconName} size={17} />
                       <span>{service.short}</span>
                     </Link>
@@ -218,26 +218,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 Products
               </p>
               <ul className="footer-nav">
-                <li>
-                  <a
-                    href="https://cvtoedge.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Icon name="doc" size={17} />
-                    <span>CVToEdge</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://hatdesk.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Icon name="cpu" size={17} />
-                    <span>HatDesk</span>
-                  </a>
-                </li>
+                {products.map((product) => (
+                  <li key={product.name}>
+                    <Link to="/products" hash={`product-${product.slug}`}>
+                      <Icon name={product.icon as IconName} size={17} />
+                      <span>{product.name}</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

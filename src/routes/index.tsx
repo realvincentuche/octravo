@@ -48,7 +48,13 @@ function Home() {
           />
           <div className="grid-2">
             {services.slice(0, 4).map((service) => (
-              <article className="card image-card" key={service.title}>
+              <Link
+                className="card image-card"
+                key={service.title}
+                to="/services"
+                hash={`service-${service.slug}`}
+                style={{ textDecoration: 'none' }}
+              >
                 <img src={service.image} alt="" loading="lazy" />
                 <div className={`card-body ${service.tone}`}>
                   <div className="card-icons">
@@ -59,7 +65,7 @@ function Home() {
                   <h3>{service.title}</h3>
                   <p>{service.body}</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
           <div className="action-row">
@@ -143,7 +149,11 @@ function Home() {
                       {product.cta}
                       <span className="arr" aria-hidden="true">→</span>
                     </a>
-                    <Link className="btn btn-ghost on-dark" to="/products">
+                    <Link
+                      className="btn btn-ghost on-dark"
+                      to="/products"
+                      hash={`product-${product.slug}`}
+                    >
                       Learn more
                     </Link>
                   </div>

@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Reveal } from '../components/Reveal'
 import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
+import { useScrollToHash } from '../components/useScrollToHash'
 import { Icon, type IconName } from '../components/icons'
 import { company, services, serviceWhats } from '../site'
 
@@ -10,6 +11,7 @@ export const Route = createFileRoute('/services')({ component: Services })
 
 function Services() {
   useDocumentTitle('Services')
+  useScrollToHash()
 
   return (
     <Reveal>
@@ -42,6 +44,8 @@ function Services() {
               <article
                 className={`feature-row${i % 2 === 1 ? ' flip' : ''}`}
                 key={service.title}
+                id={`service-${service.slug}`}
+                style={{ scrollMarginTop: '90px' }}
               >
                 <div className="feature-media">
                   <img src={service.image} alt="" loading="lazy" />

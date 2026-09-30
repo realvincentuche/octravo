@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Reveal } from '../components/Reveal'
 import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
+import { useScrollToHash } from '../components/useScrollToHash'
 import { Icon, type IconName } from '../components/icons'
 import { products, productWhats } from '../site'
 
@@ -12,6 +13,7 @@ const tones = ['tone-red', 'tone-gold'] as const
 
 function Products() {
   useDocumentTitle('Products')
+  useScrollToHash()
 
   return (
     <Reveal>
@@ -41,6 +43,8 @@ function Products() {
               <article
                 className={`product-panel${i % 2 === 1 ? ' flip' : ''}`}
                 key={product.name}
+                id={`product-${product.slug}`}
+                style={{ scrollMarginTop: '90px' }}
               >
                 <div className="panel-media">
                   <img src={product.image} alt={`${product.name} preview`} loading="lazy" />
