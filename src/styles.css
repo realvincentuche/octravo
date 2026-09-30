@@ -964,7 +964,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(12, 5, 5, 0.72);
+  background: rgba(12, 5, 5, 0.82);
   pointer-events: none;
 }
 
@@ -1003,7 +1003,7 @@ main {
   font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--paper);
+  color: var(--gold);
   margin: 0.9rem auto 0;
   max-width: 24ch;
   display: inline-block;
