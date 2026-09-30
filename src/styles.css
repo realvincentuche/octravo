@@ -1064,6 +1064,14 @@ main {
   margin-top: 0;
 }
 
+.role-sub {
+  margin: 1.6rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
 .card ul {
   margin: 0.75rem 0 0;
   padding-left: 1.1rem;

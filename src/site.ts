@@ -504,34 +504,49 @@ export const industries = [
 
 export const role = {
   title: 'Sales and Marketing Executive',
-  location: 'Oregun, Lagos',
-  mode: 'Onsite',
-  type: 'Full time',
+  mode: 'On-site',
+  type: 'Full-time',
   closeNote: 'Early applications reviewed first. The role stays open until filled.',
   summary:
-    'Own the pipeline. Find SME leads, run outreach, book discovery calls, follow up quotes and help launch CVToEdge and HatDesk into the market.',
+    'Octravo builds websites, software, automation and AI tools for businesses. We need someone who finds the customers who need that work and keeps them talking to us.',
   duties: [
-    'Find and qualify SME leads across Lagos and beyond',
-    'Run outreach by phone, WhatsApp, email and visits',
-    'Book discovery calls and keep the calendar full',
-    'Follow up proposals and quotes until each deal closes or dies cleanly',
-    'Support product launches, demos and onboarding for CVToEdge and HatDesk',
-    'Keep the pipeline sheet current and report numbers every week',
+    'Research businesses that could use what we build.',
+    'Keep a clean list of prospects and the people who decide.',
+    'Reach out on WhatsApp, LinkedIn, email and phone.',
+    'Start honest conversations about what each prospect needs.',
+    'Follow up steadily and keep every deal moving.',
+    'Qualify leads and set up meetings with the right ones.',
+    'Chase quotes, proposals and old threads until they close.',
+    'Reopen cold and quiet prospects.',
+    'Plan and publish useful content for our online channels.',
+    'Turn project work and technical know-how into posts people understand.',
+    'Look after our online presence and spot ways to reach more buyers.',
+    'Keep the pipeline sheet current, with history, stage, next step and follow-up dates.',
+    'Send a short daily report covering work done, sales activity, open deals and blockers.',
   ],
   requirements: [
-    'Proven B2B selling experience, ideally with SMEs in Lagos',
-    'Clear spoken and written English',
-    'Comfortable explaining software to non technical buyers',
-    'Disciplined follow up. You do not let leads go cold',
-    'Able to work onsite in Oregun, Lagos',
-    'Available to start quickly',
+    'Experience in sales, business development, marketing, customer acquisition or similar work.',
+    'Good written and spoken English.',
+    'Comfortable talking to owners and decision makers.',
+    'Solid grasp of marketing and social media.',
+    'At home with WhatsApp, LinkedIn, email, spreadsheets and online research.',
+    'Organised, with strong follow-up.',
+    'Works alone well and hits targets.',
+    'Ready to learn the tech well enough to explain the business problem it fixes.',
   ],
-  task: 'Shortlisted candidates complete a short task. Review this website and send a 30, 60 and 90 day plan plus ten real prospect names with one line each on why they fit.',
-  applySubject: 'Application: Sales and Marketing Executive',
+  advantage:
+    'Experience selling websites, software, SaaS, AI, automation, IT or other digital services helps.',
+  applyEmail: 'careers@octravo.com',
+  applySubject: 'Application for Sales & Marketing Executive',
 }
 
-export const roleApplyHref = `mailto:${company.email}?subject=${encodeURIComponent(
+export const roleWhats = (roleTitle: string) =>
+  `https://wa.me/2348030564875?text=${encodeURIComponent(
+    `Hello Octravo, I would like to ask about the ${roleTitle} role.`,
+  )}`
+
+export const roleApplyHref = `mailto:${role.applyEmail}?subject=${encodeURIComponent(
   role.applySubject,
 )}&body=${encodeURIComponent(
-  'Hello Octravo,\n\nI am applying for the Sales and Marketing Executive role.\n\nFull name:\nPhone:\nLocation:\nEarliest start date:\nLinkedIn or CV link:\n\nOne paragraph on my best B2B result:\n\nThank you.',
+  'Hello Octravo,\n\nI am applying for the Sales and Marketing Executive role.\n\nFull name:\nPhone:\nLocation:\nEarliest start date:\nLinkedIn or CV link:\n\nWhy I fit this role:\n\nThank you.',
 )}`
