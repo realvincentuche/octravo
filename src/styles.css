@@ -334,9 +334,9 @@ main {
   gap: 0.18rem;
   text-decoration: none;
   color: #fff;
-  font-family: var(--font-display);
+  font-family: var(--font);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3em;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
@@ -2026,9 +2026,9 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
-  font-family: var(--font-display);
+  font-family: var(--font);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.3em;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
