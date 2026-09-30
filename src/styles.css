@@ -1096,6 +1096,7 @@ main {
   height: 52px;
   border-radius: 15px;
   color: #fff;
+  background: linear-gradient(135deg, #d82323, #6d0b0b);
   box-shadow: 0 12px 24px -10px rgba(109, 11, 11, 0.55);
   transition: transform 0.25s ease;
 }

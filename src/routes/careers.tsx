@@ -35,7 +35,7 @@ function Careers() {
             lede="We build websites, software, automation and AI tools for businesses that need them to work. No layers, no theatre. You talk to customers directly, you watch your work go live, and you learn fast because there is nowhere to hide."
           />
           <div className="grid-3">
-            <article className="card">
+            <article className="card tone-red">
               <div className="card-icons">
                 <span className="card-badge">
                   <Icon name="users" size={24} />
@@ -47,7 +47,7 @@ function Careers() {
                 unfiltered, and good ideas ship quickly.
               </p>
             </article>
-            <article className="card">
+            <article className="card tone-gold">
               <div className="card-icons">
                 <span className="card-badge">
                   <Icon name="rocket" size={24} />
@@ -59,7 +59,7 @@ function Careers() {
                 is on things people rely on every day.
               </p>
             </article>
-            <article className="card">
+            <article className="card tone-plum">
               <div className="card-icons">
                 <span className="card-badge">
                   <Icon name="bulb" size={24} />

@@ -210,7 +210,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     }}
                   >
                     <Icon name="pin" size={17} />
-                    <span>Oregun, Lagos, Nigeria</span>
+                    <span>Lagos, Nigeria</span>
                   </span>
                 </li>
               </ul>
