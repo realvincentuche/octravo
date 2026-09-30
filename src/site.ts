@@ -165,6 +165,11 @@ export const serviceWhats = (service: string) =>
     `Hello Octravo, I would like to discuss ${service}.`,
   )}`
 
+export const productWhats = (product: string) =>
+  `https://wa.me/2348030564875?text=${encodeURIComponent(
+    `Hello Octravo, I would like to ask about ${product}.`,
+  )}`
+
 export const services = [
   {
     title: 'Web Application Development',

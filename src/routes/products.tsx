@@ -4,7 +4,7 @@ import { Reveal } from '../components/Reveal'
 import { Banner, ContactBand, SectionHead, banners } from '../components/Sections'
 import { useDocumentTitle } from '../components/useDocumentTitle'
 import { Icon, type IconName } from '../components/icons'
-import { company, products } from '../site'
+import { products, productWhats } from '../site'
 
 export const Route = createFileRoute('/products')({ component: Products })
 
@@ -75,7 +75,7 @@ function Products() {
                       {product.cta}
                       <span className="arr" aria-hidden="true">→</span>
                     </a>
-                    <a className="btn btn-ghost" href={company.whatsapp}>
+                    <a className="btn btn-ghost" href={productWhats(product.name)}>
                       Ask about it
                     </a>
                   </div>
