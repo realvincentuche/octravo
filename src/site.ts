@@ -88,6 +88,11 @@ export const socials = [
     href: 'https://www.instagram.com/octravo',
     icon: 'instagram',
   },
+  {
+    name: 'X',
+    href: 'https://x.com/octravo',
+    icon: 'x',
+  },
 ] as const
 
 export const stats = [
