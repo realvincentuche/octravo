@@ -7,7 +7,7 @@ export const company = {
   phoneHref: 'tel:+2348030564875',
   whatsapp:
     'https://wa.me/2348030564875?text=Hello%20Octravo%2C%20I%20would%20like%20to%20discuss%20a%20project.',
-  address: '1 Bradford Lane, Off Ibijioke Street, Oregun, Lagos, Nigeria',
+  address: 'The Philippi Centre, Oluwalogbon House, Plot A, Obafemi Awolowo Way, Alausa, Ikeja, Lagos, Nigeria',
   registration: 'RC 9343081',
   website: 'www.octravo.com',
 }
@@ -69,7 +69,7 @@ export const heroSlides = [
   {
     image: u('photo-1600880292203-757bb62b4baf', 1800),
     tone: 4,
-    kicker: 'A partner in Lagos',
+    kicker: 'Your reliable tech partner',
     title: 'Someone to call after go-live',
     body: 'Discovery to deployment to support. Docs, training and a team that picks up the phone when it matters.',
     primary: { label: 'Call the office', href: 'tel:+2348030564875' },
